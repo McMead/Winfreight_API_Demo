@@ -18,7 +18,7 @@ namespace Winfreight_API_Demo
         {
             HttpClient client = new HttpClient();
 
-            var request_auth = new HttpRequestMessage(HttpMethod.Post, "http://cloudplatform.iconnix.co.za/Winfreight_API/login?username=acdirect&password=%23axl87");
+            var request_auth = new HttpRequestMessage(HttpMethod.Post, "http://cloudplatform.iconnix.co.za/Winfreight_API/login?username={username}&password={password}");
 
             request_auth.Headers.Accept.Clear();
 
