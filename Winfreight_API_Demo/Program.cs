@@ -18,7 +18,7 @@ namespace Winfreight_API_Demo
         {
             HttpClient client = new HttpClient();
 
-            var request_auth = new HttpRequestMessage(HttpMethod.Post, "{base url}/Winfreight_API/login?username={username}&password={password}");
+            var request_auth = new HttpRequestMessage(HttpMethod.Post, "{base url}/WinAPI/login?username={username}&password={password}");
 
             request_auth.Headers.Accept.Clear();
 
@@ -26,13 +26,13 @@ namespace Winfreight_API_Demo
 
             await client.SendAsync(request_auth, CancellationToken.None);
            
-            var request_call = new HttpRequestMessage(HttpMethod.Post, "{base url}/Winfreight_API/gettracking");
+            var request_call = new HttpRequestMessage(HttpMethod.Post, "{base url}/WinAPI/gettracking");
 
             Params param = new Params();
 
             param.Waybill = "310537";
 
-            param.GroupName = "ac";
+            param.GroupName = "group";
 
             var json = JsonConvert.SerializeObject(param);
 
